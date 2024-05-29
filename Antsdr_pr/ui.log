@@ -1,0 +1,65 @@
+/home/ljudkriget/AntSDR Passive Radar/Antsdr_pr/_signal_processing/krakenSDR_signal_processor.py:323: NumbaDeprecationWarning: The 'nopython' keyword argument was not supplied to the 'numba.jit' decorator. The implicit default value for this argument is currently False, but it will be changed to True in Numba 0.59.0. See https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-object-mode-fall-back-behaviour-when-using-jit for details.
+  @jit(fastmath=True)
+/home/ljudkriget/AntSDR Passive Radar/Antsdr_pr/_signal_processing/krakenSDR_signal_processor.py:384: NumbaDeprecationWarning: The 'nopython' keyword argument was not supplied to the 'numba.jit' decorator. The implicit default value for this argument is currently False, but it will be changed to True in Numba 0.59.0. See https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-object-mode-fall-back-behaviour-when-using-jit for details.
+  @jit(fastmath=True, cache=True)
+[INFO] [UHD] linux; Clang version 10.0.0 ; Boost_107100; UHD_4.1.0.0-0-9abe8bc8
+[INFO] [ANT] Detected Device: ANTSDR
+[INFO] [ANT] Initialize CODEC control...
+[INFO] [ANT] Initialize Radio control...
+[INFO] [ANT] Performing register loopback test... 
+[INFO] [ANT] Register loopback test passed
+[INFO] [ANT] Performing register loopback test... 
+[INFO] [ANT] Register loopback test passed
+[INFO] [ANT] Setting master clock rate selection to 'automatic'.
+[INFO] [ANT] Asking for clock rate 16.000000 MHz... 
+[INFO] [ANT] Actually got clock rate 16.000000 MHz.
+[INFO] [ANT] Asking for clock rate 32.000000 MHz... 
+[INFO] [ANT] Actually got clock rate 32.000000 MHz.
+[INFO] [ANT] Asking for clock rate 8.000000 MHz... 
+[INFO] [ANT] Actually got clock rate 8.000000 MHz.
+INFO:quart.serving:Running on http://0.0.0.0:8080 (CTRL + C to quit)
+INFO:quart.serving:127.0.0.1:45534 GET /config 1.1 200 654 7802
+INFO:quart.serving:127.0.0.1:45536 GET /_push 1.1 101 - 1160
+INFO:quart.serving:127.0.0.1:45534 GET /assets/favicon.ico 1.1 200 27903 6660
+DDDDDDDDDDDDDDDDDD/home/ljudkriget/AntSDR Passive Radar/Antsdr_pr/_signal_processing/krakenSDR_signal_processor.py:323: NumbaWarning:
+
+
+Compilation is falling back to object mode WITH looplifting enabled because Function "Wiener_SMI_MRE" failed type inference due to: Untyped global name 'R_eye_memoize': Cannot determine Numba type of <class 'functools._lru_cache_wrapper'>
+
+File "_signal_processing/krakenSDR_signal_processor.py", line 351:
+def Wiener_SMI_MRE(ref_ch, surv_ch, K):
+    <source elided>
+    R, r = pruned_correlation(ref_ch, surv_ch, K, N)
+    R_mult = R_eye_memoize(K)
+    ^
+
+
+DDDD/home/ljudkriget/miniforge3/envs/kraken/lib/python3.9/site-packages/numba/core/object_mode_passes.py:151: NumbaWarning:
+
+Function "Wiener_SMI_MRE" was compiled in object mode without forceobj=True.
+
+File "_signal_processing/krakenSDR_signal_processor.py", line 324:
+@jit(fastmath=True)
+def Wiener_SMI_MRE(ref_ch, surv_ch, K):
+^
+
+
+/home/ljudkriget/miniforge3/envs/kraken/lib/python3.9/site-packages/numba/core/object_mode_passes.py:161: NumbaDeprecationWarning:
+
+
+Fall-back from the nopython compilation path to the object mode compilation path has been detected. This is deprecated behaviour that will be removed in Numba 0.59.0.
+
+For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-object-mode-fall-back-behaviour-when-using-jit
+
+File "_signal_processing/krakenSDR_signal_processor.py", line 324:
+@jit(fastmath=True)
+def Wiener_SMI_MRE(ref_ch, surv_ch, K):
+^
+
+
+DDDDDDOMP: Info #276: omp_set_nested routine deprecated, please use omp_set_max_active_levels instead.
+DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDINFO:quart.serving:127.0.0.1:59952 GET /prnew 1.1 200 654 2503
+DDDDDDINFO:quart.serving:127.0.0.1:59966 GET /_push 1.1 101 - 1158
+DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDINFO:quart.serving:127.0.0.1:41208 GET /config 1.1 200 654 7055
+DDDDINFO:quart.serving:127.0.0.1:41212 GET /_push 1.1 101 - 2776
+DDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
